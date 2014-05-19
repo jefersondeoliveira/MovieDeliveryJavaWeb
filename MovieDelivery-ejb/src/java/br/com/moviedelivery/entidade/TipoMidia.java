@@ -1,10 +1,7 @@
 package br.com.moviedelivery.entidade;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -18,6 +15,9 @@ public class TipoMidia {
     @NotNull(message = "Informe uma descrição")
     @Column(name = "descricao", nullable = false)
     private String descricao;
+    
+    @OneToMany(mappedBy = "tipoMidia", fetch = FetchType.LAZY)
+    private List<Midia> midias;
 
     public Integer getIdTipoMidia() {
         return idTipoMidia;
@@ -34,6 +34,14 @@ public class TipoMidia {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
-    
+
+    public List<Midia> getMidias() {
+        return midias;
+    }
+
+    public void setMidias(List<Midia> midias) {
+        this.midias = midias;
+    }
+
+   
 }

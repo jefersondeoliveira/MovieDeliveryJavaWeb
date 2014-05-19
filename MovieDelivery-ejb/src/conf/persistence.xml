@@ -6,6 +6,8 @@
     <class>br.com.moviedelivery.entidade.Categoria</class>
     <class>br.com.moviedelivery.entidade.TipoMidia</class>
     <class>br.com.moviedelivery.entidade.Midia</class>
+    <class>br.com.moviedelivery.entidade.Administrador</class>
+    <class>br.com.moviedelivery.entidade.Pessoa</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="eclipselink.ddl-generation" value="create-tables"/>
