@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Administrador extends Pessoa{
+public class Administrador{
     
     @NotNull(message = "Informe um email")
     @Column(name = "email", nullable = false)
@@ -13,6 +13,11 @@ public class Administrador extends Pessoa{
     @NotNull(message = "Informe uma senha")
     @Column(name = "senha", nullable = false)
     private String senha;
+    
+    @Id
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idPessoa", nullable = false)
+    private Pessoa pessoa;
 
     public String getEmail() {
         return email;
@@ -28,6 +33,14 @@ public class Administrador extends Pessoa{
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
     
     

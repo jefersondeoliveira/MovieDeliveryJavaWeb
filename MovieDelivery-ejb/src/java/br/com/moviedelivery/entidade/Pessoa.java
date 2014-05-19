@@ -14,6 +14,9 @@ public class Pessoa {
     @NotNull(message = "Informe um nome")
     @Column(name = "nome", nullable = false)
     private String nome;
+    
+    @OneToOne(mappedBy = "pessoa", fetch = FetchType.LAZY)
+    private Administrador administrador;    
 
     public Integer getIdPessoa() {
         return idPessoa;
@@ -29,6 +32,14 @@ public class Pessoa {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Administrador getAdministrador() {
+        return administrador;
+    }
+
+    public void setAdministrador(Administrador administrador) {
+        this.administrador = administrador;
     }
     
     
