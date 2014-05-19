@@ -1,13 +1,10 @@
 package br.com.moviedelivery.entidade;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public abstract class Pessoa {
+public class Pessoa {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
