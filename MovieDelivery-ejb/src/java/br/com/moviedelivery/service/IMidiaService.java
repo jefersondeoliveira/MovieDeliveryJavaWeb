@@ -3,7 +3,7 @@ package br.com.moviedelivery.service;
 import br.com.moviedelivery.entidade.Midia;
 import java.util.List;
 
-public interface IMidia {
+public interface IMidiaService {
     
     public List<Midia> listar();
     

@@ -3,7 +3,7 @@ package br.com.moviedelivery.service;
 import br.com.moviedelivery.entidade.TipoMidia;
 import java.util.List;
 
-public interface ITipoMidia {
+public interface ITipoMidiaService {
     
     public List<TipoMidia> listar();
     

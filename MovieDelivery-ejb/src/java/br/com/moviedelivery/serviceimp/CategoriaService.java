@@ -1,7 +1,7 @@
 package br.com.moviedelivery.serviceimp;
 
 import br.com.moviedelivery.entidade.Categoria;
-import br.com.moviedelivery.service.ICategoria;
+import br.com.moviedelivery.service.ICategoriaService;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 @Stateless
-public class CategoriaService implements ICategoria{
+public class CategoriaService implements ICategoriaService{
     
     @PersistenceContext
     private EntityManager em;

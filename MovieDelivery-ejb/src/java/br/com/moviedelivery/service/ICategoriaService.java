@@ -3,7 +3,7 @@ package br.com.moviedelivery.service;
 import br.com.moviedelivery.entidade.Categoria;
 import java.util.List;
 
-public interface ICategoria {
+public interface ICategoriaService {
     
     public List<Categoria> listar();
     

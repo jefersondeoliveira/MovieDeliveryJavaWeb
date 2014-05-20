@@ -1,7 +1,7 @@
 package br.com.moviedelivery.serviceimp;
 
 import br.com.moviedelivery.entidade.Midia;
-import br.com.moviedelivery.service.IMidia;
+import br.com.moviedelivery.service.IMidiaService;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 @Stateless
-public class MidiaService implements IMidia{
+public class MidiaService implements IMidiaService{
     
     @PersistenceContext
     private EntityManager em;
@@ -17,7 +17,7 @@ public class MidiaService implements IMidia{
     @Override
     public List<Midia> listar() {
         TypedQuery<Midia> query =
-                em.createQuery("select a from Categoria as a",
+                em.createQuery("select a from Midia as a",
                 Midia.class);
         return query.getResultList();
     }

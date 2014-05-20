@@ -1,7 +1,7 @@
 package br.com.moviedelivery.serviceimp;
 
 import br.com.moviedelivery.entidade.Administrador;
-import br.com.moviedelivery.service.IAdministrador;
+import br.com.moviedelivery.service.IAdministradorService;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 @Stateless
-public class AdministradorService implements IAdministrador{
+public class AdministradorService implements IAdministradorService{
     
     @PersistenceContext
     private EntityManager em;

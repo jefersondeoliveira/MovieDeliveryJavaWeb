@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Pessoa {
+public  class Pessoa {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
