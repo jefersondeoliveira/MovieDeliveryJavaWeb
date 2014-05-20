@@ -16,7 +16,7 @@ public class TipoMidia {
     @Column(name = "descricao", nullable = false)
     private String descricao;
     
-    @OneToMany(mappedBy = "tipoMidia", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "tipoMidias", fetch = FetchType.LAZY)
     private List<Midia> midias;
 
     public Integer getIdTipoMidia() {

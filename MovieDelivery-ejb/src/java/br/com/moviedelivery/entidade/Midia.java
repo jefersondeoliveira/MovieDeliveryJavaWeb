@@ -1,5 +1,6 @@
 package br.com.moviedelivery.entidade;
 
+import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -31,9 +32,11 @@ public class Midia {
     @JoinColumn(name = "idCategoria", nullable = false)
     private Categoria categoria;
     
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idTipoMidia", nullable = false)
-    private TipoMidia tipoMidia;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "MidiaTipoMidia",
+       joinColumns = @JoinColumn(name="idMidia"),
+       inverseJoinColumns = @JoinColumn(name = "idTipoMidia"))
+    private List<TipoMidia> tipoMidias;
 
     public Integer getIdMidia() {
         return idMidia;
@@ -83,14 +86,14 @@ public class Midia {
         this.categoria = categoria;
     }
 
-    public TipoMidia getTipoMidia() {
-        return tipoMidia;
+    public List<TipoMidia> getTipoMidias() {
+        return tipoMidias;
     }
 
-    public void setTipoMidia(TipoMidia tipoMidia) {
-        this.tipoMidia = tipoMidia;
+    public void setTipoMidias(List<TipoMidia> tipoMidias) {
+        this.tipoMidias = tipoMidias;
     }
-    
+
     
     
 }
