@@ -16,9 +16,13 @@
         <!-- css -->
         <link type="text/css" rel="stylesheet" href="css/reset.css"/>
         <link type="text/css" rel="stylesheet" href="css/style.css"/>
+        <link type="text/css" rel="stylesheet" href="css/jcarousel.css"/>
         <!-- css -->
         <!-- plugs -->
-
+        <script type="text/javascript" src="js/plugins/jquery.js"></script>
+        <script type="text/javascript" src="js/plugins/jquery.jcarousel.min.js"></script>
+        <script type="text/javascript" src="js/plugins/jcarousel.responsive.js"></script>
+        <script type="text/javascript" src="js/func/funcs.js"></script>
         <!-- plugs -->
 
     </h:head>
@@ -38,33 +42,60 @@
         <div id="header">
             <div id="header-content">
                 <div id="logo">
-                    <a href="#" title="Inicio"></a>
+                    <h:link outcome="/index.html" value=""></h:link>
                 </div>
-<!--                <div id="login">
-                    <a href="#" title="Cadastrar">Cadastrar</a>
-                    <a href="#" title="Logar">Logar</a>
-                </div>-->
+                <!--                <div id="login">
+                                    <a href="#" title="Cadastrar">Cadastrar</a>
+                                    <a href="#" title="Logar">Logar</a>
+                                </div>-->
             </div>
         </div>
         <div id="menu">
             <div id="menu-content">
                 <ul>
-                    <li><a href="#" title="">Inicio</a></li>
-                    <li><a href="#" title="">Filmes+</a></li>
-                    <li><a href="#" title="">Sobre</a></li>
-                    <li><a href="#" title="">Contato</a></li>
+                    <li><h:link outcome="/index.html" value="Inicio"></h:link></li>
+                    <li>
+                        <a href="#" title="">Filmes+</a>
+                        <ul class="submenu">
+                            <li><h:link outcome="/categorias.html" value="Terror"></h:link></li>
+                            <li><h:link outcome="/categorias.html" value="Ação"></h:link></li>
+                            <li><h:link outcome="/categorias.html" value="Aventura"></h:link></li>
+                            <li><h:link outcome="/categorias.html" value="Ação"></h:link></li>
+                            <li><h:link outcome="/categorias.html" value="Aventura"></h:link></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" title="">Cadastro+</a>
+                        <ul class="submenu">
+                            <li><h:link outcome="index" value="Midia"></h:link></li>
+                            <li><h:link outcome="index" value="Tipo Midia"></h:link></li>
+                            <li><h:link outcome="/cadastro/categoria/index.html" value="Generos"></h:link></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" title="">Relatorio+</a>
+                        <ul class="submenu">
+                            <li><h:link outcome="index" value="Midia"></h:link></li>
+                            <li><h:link outcome="index" value="Tipo Midia"></h:link></li>
+                            <li><h:link outcome="index" value="Generos"></h:link></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
         <div id="content">
-            <div id="content-content"></div>
+            <div id="content-content">
+
+                <ui:insert name="conteudo"></ui:insert>
+
+            <div class="clean"></div>
+            </div>
         </div>
         <div id="footer">
             <div id="footer-content">
-                <p>The MovieDelivery.com</p>
+                <p>2014 - The MovieDelivery.com.br</p>
             </div>
         </div>
-
 
     </h:body>
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:p="http://primefaces.org/ui">
+    
+    <h:form id="formCategoria">
+        <p:panel header="Cadastro de Categorias" id="painelCategoria">
+            <p:growl/>
+            <h:inputHidden
+                value="#{categoriaManagedBean.categoria.idCategoria}"/>
+            Descrição:
+            <p:inputText
+                value="#{categoriaManagedBean.categoria.descricao}"/>
+            <p:commandButton 
+                value="Salvar" 
+                icon="ui-icon-disk" 
+                actionListener="#{categoriaManagedBean.salvar()}"
+                update="painelCategoria"/>
+        </p:panel>
+    </h:form>
+
+</ui:fragment>
