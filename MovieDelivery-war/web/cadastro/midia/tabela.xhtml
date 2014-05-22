@@ -10,38 +10,53 @@ and open the template in the editor.
              xmlns:h="http://java.sun.com/jsf/html">
 
     <h:form id="formTabela">
-    
-    <p:contextMenu for="tabelaTipoMidia">
-        <p:menuitem value="Excluir" icon="ui-icon-close"
-                    actionListener="#{tipoMidiaManagedBean.excluir()}"
-                    update="painelTabela"></p:menuitem>
-         <p:menuitem value="Editar" icon="ui-icon-pencil"
-                     actionListener="#{tipoMidiaManagedBean.editar()}"
-                    update=":formTipoMidia:painelTipoMidia"></p:menuitem>
-    </p:contextMenu>
-    
-        <p:panel id="painelTabela" style="margin-top: 10px">
-        <p:dataTable paginator="true"
-                     rows="10"
-                     id="tabelaTipoMidia"
-                     emptyMessage="Nenhum tipo de midia cadastrado"
-                     rowKey="#{tipoMidia.idTipoMidia}"
-                     selection="#{tipoMidiaManagedBean.tipoMidiaSelecionado}"
-                     value="#{tipoMidiaManagedBean.listar()}"
-                     var="tipoMidia"
-                     selectionMode="single">
 
-            <p:column headerText="Código">
-                #{tipoMidia.idTipoMidia}
-            </p:column>
+        <p:contextMenu for="tabelaMidia">
+            <p:menuitem value="Excluir" icon="ui-icon-close"
+                        actionListener="#{midiaManagedBean.excluir()}"
+                        update="painelTabela"></p:menuitem>
+            <p:menuitem value="Editar" icon="ui-icon-pencil"
+                        actionListener="#{midiaManagedBean.editar()}"
+                        update=":formMidia:painelMidia"></p:menuitem>
+        </p:contextMenu>
 
-            <p:column headerText="Descrição">
-                #{tipoMidia.descricao}
-            </p:column>
-        </p:dataTable>
-    </p:panel>
-        
-        </h:form>
+        <p:panel id="painelTabela" style="margin-top: 10px;">
+            <p:dataTable paginator="true"
+                         rows="10"
+                         id="tabelaMidia"
+                         emptyMessage="Nenhuma midia cadastrada"
+                         rowKey="#{midia.idMidia}"
+                         selection="#{midiaManagedBean.midiaSelecionada}"
+                         value="#{midiaManagedBean.listar()}"
+                         var="midia"
+                         selectionMode="single">
+
+                <p:column headerText="Titulo">
+                    #{midia.tituloMidia}
+                </p:column>
+
+                <p:column headerText="(mim)">
+                    #{midia.duracao}
+                </p:column>
+
+                <p:column headerText="Qtd">
+                    #{midia.quantidade}
+                </p:column>
+
+                <p:column headerText="Genero">
+                    #{midia.categoria.descricao}
+                </p:column>
+
+                <p:column >
+                    <ui:repeat value="#{midia.tipoMidias}" var="listTp">
+                        #{listTp.descricao}
+                    </ui:repeat>
+                </p:column>
+                
+            </p:dataTable>
+        </p:panel>
+
+    </h:form>
 
 
 </ui:fragment>
