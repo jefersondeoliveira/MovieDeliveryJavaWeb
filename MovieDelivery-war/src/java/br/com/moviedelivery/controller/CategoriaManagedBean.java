@@ -27,6 +27,10 @@ public class CategoriaManagedBean {
         categoria = new Categoria();
     }
     
+    public String goToListaPorCategoria(){
+        return "categorias.xhtml";
+    }
+    
     public void salvar() {
         String erro = categoriaService.salvar(categoria);
         if (erro == null) {

@@ -49,5 +49,21 @@ public class MidiaService implements IMidiaService{
 
         return null;
     }
+
+    @Override
+    public List<Midia> listarDestaque() {
+        TypedQuery<Midia> query =
+                em.createQuery("select a from Midia as a ORDER BY a.idMidia DESC ",
+                Midia.class);
+        return query.setMaxResults(5).getResultList();
+    }
+
+    @Override
+    public List<Midia> listarPorCategoria(short id) {
+         TypedQuery<Midia> query =
+                em.createQuery("select a from Midia as a Where a.categoria.idCategoria = "+id,
+                Midia.class);
+        return query.getResultList();
+    }
     
 }

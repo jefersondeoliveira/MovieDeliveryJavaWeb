@@ -121,7 +121,7 @@
 
 
 /** Detalhes box**/
-.box-detalhes {width: 315px; position: absolute; left: 100px; top: 30px; background: #F5F5F5; z-index: 5;display: none;
+.box-detalhes {width: 315px; height: 250px; position: absolute; left: 100px; top: 30px; background: #F5F5F5; z-index: 5;display: none;
                         -webkit-box-shadow: 2px 2px 4px #2E2E2E; -moz-box-shadow: 2px 2px 4px #2E2E2E; box-shadow: 2px 2px 4px #2E2E2E;}
 .box-detalhes:hover{cursor: default;}
 .box-detalhes span{position: absolute; left: -25px; top: 100px; width: 25px; height: 55px; background: url(../imgs/ico-detalhes.png);}

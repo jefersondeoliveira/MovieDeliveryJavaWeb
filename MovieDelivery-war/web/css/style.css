@@ -34,9 +34,8 @@ a{-moz-transition: all 0.2s ease-in-out 0s;-webkit-transition: all 0.2s ease-in-
 #footer-content p{float:left; font: 12px Arial, Helvetica, sans-serif; color: #444444; margin: 20px 0 0 0; text-shadow: 0 0 1px #ffffff;font-weight: bold}
 
 .box-lista{
-	display: block;
     max-width: 100%;
-    height: auto !important;
+    height: 293px;
     float: left;
     -webkit-box-shadow: 2px 2px 4px #2E2E2E;
     -moz-box-shadow: 2px 2px 4px #2E2E2E;

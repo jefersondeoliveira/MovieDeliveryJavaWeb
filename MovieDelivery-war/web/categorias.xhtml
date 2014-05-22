@@ -11,199 +11,25 @@ and open the template in the editor.
 
         <ui:define name="conteudo">
 
-            <div class="box-lista">
-                <img src="imgs/sem-poster.jpg" alt="Image 1"/>
-                <div class="box-detalhes">
-                    <span></span>
-                    <div class="header">
-                        <h1>O LOBO DE WALL STREET</h1>
-                        <h2>120 minutos - 3 exemplares</h2>
-                        <h3>DVD - BlueRay - 4K</h3>
+            <ui:repeat value="#{midiaManagedBean.listarPorCategoria()}" var="midia">
+                <div class="box-lista">
+                    <img src="imgs/sem-poster.jpg" alt="Image 1"/>
+                    <div class="box-detalhes">
+                        <span></span>
+                        <div class="header">
+                            <h1>#{midia.tituloMidia}</h1>
+                            <h2>#{midia.duracao} minutos - #{midia.quantidade} exemplares</h2>
+                            <h2>#{midia.categoria.descricao}</h2>
+                            <h3>
+                                <ui:repeat value="#{midia.tipoMidias}" var="listTp">
+                                    #{listTp.descricao}
+                                </ui:repeat>
+                            </h3>
+                        </div>
+                        <p>#{midia.sinopse}</p>
                     </div>
-                    <p>ortor placerat in, a enim tempor placerat turpis, a, sed, habitasse augue, et nunc nisi et magna risus odio tincidunt, tortor est, nec, et cum rhoncus amet amet nisi cursus, quis lorem turpis in, enim augue, lectus proin diam facilisis, ut velit dignissim integer dictumst? Cum et phasellus eros sagittis, phasellus elementum augue adipiscing magna habitasse nunc mid scelerisque porta dis porttitor aliquam. Ultricies, cursus odio facilisis a vut integer, arcu, est? Ultricies penatibus sociis, integer! Odio porta </p>
                 </div>
-            </div>
-
-            <div class="box-lista">
-                <img src="imgs/sem-poster.jpg" alt="Image 1"/>
-                <div class="box-detalhes">
-                    <span></span>
-                    <div class="header">
-                        <h1>O LOBO DE WALL STREET</h1>
-                        <h2>120 minutos - 3 exemplares</h2>
-                        <h3>DVD - BlueRay - 4K</h3>
-                    </div>
-                    <p>ortor placerat in, a enim tempor placerat turpis, a, sed, habitasse augue, et nunc nisi et magna risus odio tincidunt, tortor est, nec, et cum rhoncus amet amet nisi cursus, quis lorem turpis in, enim augue, lectus proin diam facilisis, ut velit dignissim integer dictumst? Cum et phasellus eros sagittis, phasellus elementum augue adipiscing magna habitasse nunc mid scelerisque porta dis porttitor aliquam. Ultricies, cursus odio facilisis a vut integer, arcu, est? Ultricies penatibus sociis, integer! Odio porta </p>
-                </div>
-            </div>
-            <div class="box-lista">
-                <img src="imgs/sem-poster.jpg" alt="Image 1"/>
-                <div class="box-detalhes">
-                    <span></span>
-                    <div class="header">
-                        <h1>O LOBO DE WALL STREET</h1>
-                        <h2>120 minutos - 3 exemplares</h2>
-                        <h3>DVD - BlueRay - 4K</h3>
-                    </div>
-                    <p>ortor placerat in, a enim tempor placerat turpis, a, sed, habitasse augue, et nunc nisi et magna risus odio tincidunt, tortor est, nec, et cum rhoncus amet amet nisi cursus, quis lorem turpis in, enim augue, lectus proin diam facilisis, ut velit dignissim integer dictumst? Cum et phasellus eros sagittis, phasellus elementum augue adipiscing magna habitasse nunc mid scelerisque porta dis porttitor aliquam. Ultricies, cursus odio facilisis a vut integer, arcu, est? Ultricies penatibus sociis, integer! Odio porta </p>
-                </div>
-            </div>
-            <div class="box-lista">
-                <img src="imgs/sem-poster.jpg" alt="Image 1"/>
-                <div class="box-detalhes">
-                    <span></span>
-                    <div class="header">
-                        <h1>O LOBO DE WALL STREET</h1>
-                        <h2>120 minutos - 3 exemplares</h2>
-                        <h3>DVD - BlueRay - 4K</h3>
-                    </div>
-                    <p>ortor placerat in, a enim tempor placerat turpis, a, sed, habitasse augue, et nunc nisi et magna risus odio tincidunt, tortor est, nec, et cum rhoncus amet amet nisi cursus, quis lorem turpis in, enim augue, lectus proin diam facilisis, ut velit dignissim integer dictumst? Cum et phasellus eros sagittis, phasellus elementum augue adipiscing magna habitasse nunc mid scelerisque porta dis porttitor aliquam. Ultricies, cursus odio facilisis a vut integer, arcu, est? Ultricies penatibus sociis, integer! Odio porta </p>
-                </div>
-            </div>
-            <div class="box-lista">
-                <img src="imgs/sem-poster.jpg" alt="Image 1"/>
-                <div class="box-detalhes">
-                    <span></span>
-                    <div class="header">
-                        <h1>O LOBO DE WALL STREET</h1>
-                        <h2>120 minutos - 3 exemplares</h2>
-                        <h3>DVD - BlueRay - 4K</h3>
-                    </div>
-                    <p>ortor placerat in, a enim tempor placerat turpis, a, sed, habitasse augue, et nunc nisi et magna risus odio tincidunt, tortor est, nec, et cum rhoncus amet amet nisi cursus, quis lorem turpis in, enim augue, lectus proin diam facilisis, ut velit dignissim integer dictumst? Cum et phasellus eros sagittis, phasellus elementum augue adipiscing magna habitasse nunc mid scelerisque porta dis porttitor aliquam. Ultricies, cursus odio facilisis a vut integer, arcu, est? Ultricies penatibus sociis, integer! Odio porta </p>
-                </div>
-            </div>
-            <div class="box-lista">
-                <img src="imgs/sem-poster.jpg" alt="Image 1"/>
-                <div class="box-detalhes">
-                    <span></span>
-                    <div class="header">
-                        <h1>O LOBO DE WALL STREET</h1>
-                        <h2>120 minutos - 3 exemplares</h2>
-                        <h3>DVD - BlueRay - 4K</h3>
-                    </div>
-                    <p>ortor placerat in, a enim tempor placerat turpis, a, sed, habitasse augue, et nunc nisi et magna risus odio tincidunt, tortor est, nec, et cum rhoncus amet amet nisi cursus, quis lorem turpis in, enim augue, lectus proin diam facilisis, ut velit dignissim integer dictumst? Cum et phasellus eros sagittis, phasellus elementum augue adipiscing magna habitasse nunc mid scelerisque porta dis porttitor aliquam. Ultricies, cursus odio facilisis a vut integer, arcu, est? Ultricies penatibus sociis, integer! Odio porta </p>
-                </div>
-            </div>
-            <div class="box-lista">
-                <img src="imgs/sem-poster.jpg" alt="Image 1"/>
-                <div class="box-detalhes">
-                    <span></span>
-                    <div class="header">
-                        <h1>O LOBO DE WALL STREET</h1>
-                        <h2>120 minutos - 3 exemplares</h2>
-                        <h3>DVD - BlueRay - 4K</h3>
-                    </div>
-                    <p>ortor placerat in, a enim tempor placerat turpis, a, sed, habitasse augue, et nunc nisi et magna risus odio tincidunt, tortor est, nec, et cum rhoncus amet amet nisi cursus, quis lorem turpis in, enim augue, lectus proin diam facilisis, ut velit dignissim integer dictumst? Cum et phasellus eros sagittis, phasellus elementum augue adipiscing magna habitasse nunc mid scelerisque porta dis porttitor aliquam. Ultricies, cursus odio facilisis a vut integer, arcu, est? Ultricies penatibus sociis, integer! Odio porta </p>
-                </div>
-            </div>
-            <div class="box-lista">
-                <img src="imgs/sem-poster.jpg" alt="Image 1"/>
-                <div class="box-detalhes">
-                    <span></span>
-                    <div class="header">
-                        <h1>O LOBO DE WALL STREET</h1>
-                        <h2>120 minutos - 3 exemplares</h2>
-                        <h3>DVD - BlueRay - 4K</h3>
-                    </div>
-                    <p>ortor placerat in, a enim tempor placerat turpis, a, sed, habitasse augue, et nunc nisi et magna risus odio tincidunt, tortor est, nec, et cum rhoncus amet amet nisi cursus, quis lorem turpis in, enim augue, lectus proin diam facilisis, ut velit dignissim integer dictumst? Cum et phasellus eros sagittis, phasellus elementum augue adipiscing magna habitasse nunc mid scelerisque porta dis porttitor aliquam. Ultricies, cursus odio facilisis a vut integer, arcu, est? Ultricies penatibus sociis, integer! Odio porta </p>
-                </div>
-            </div>
-            <div class="box-lista">
-                <img src="imgs/sem-poster.jpg" alt="Image 1"/>
-                <div class="box-detalhes">
-                    <span></span>
-                    <div class="header">
-                        <h1>O LOBO DE WALL STREET</h1>
-                        <h2>120 minutos - 3 exemplares</h2>
-                        <h3>DVD - BlueRay - 4K</h3>
-                    </div>
-                    <p>ortor placerat in, a enim tempor placerat turpis, a, sed, habitasse augue, et nunc nisi et magna risus odio tincidunt, tortor est, nec, et cum rhoncus amet amet nisi cursus, quis lorem turpis in, enim augue, lectus proin diam facilisis, ut velit dignissim integer dictumst? Cum et phasellus eros sagittis, phasellus elementum augue adipiscing magna habitasse nunc mid scelerisque porta dis porttitor aliquam. Ultricies, cursus odio facilisis a vut integer, arcu, est? Ultricies penatibus sociis, integer! Odio porta </p>
-                </div>
-            </div>
-            <div class="box-lista">
-                <img src="imgs/sem-poster.jpg" alt="Image 1"/>
-                <div class="box-detalhes">
-                    <span></span>
-                    <div class="header">
-                        <h1>O LOBO DE WALL STREET</h1>
-                        <h2>120 minutos - 3 exemplares</h2>
-                        <h3>DVD - BlueRay - 4K</h3>
-                    </div>
-                    <p>ortor placerat in, a enim tempor placerat turpis, a, sed, habitasse augue, et nunc nisi et magna risus odio tincidunt, tortor est, nec, et cum rhoncus amet amet nisi cursus, quis lorem turpis in, enim augue, lectus proin diam facilisis, ut velit dignissim integer dictumst? Cum et phasellus eros sagittis, phasellus elementum augue adipiscing magna habitasse nunc mid scelerisque porta dis porttitor aliquam. Ultricies, cursus odio facilisis a vut integer, arcu, est? Ultricies penatibus sociis, integer! Odio porta </p>
-                </div>
-            </div>
-            <div class="box-lista">
-                <img src="imgs/sem-poster.jpg" alt="Image 1"/>
-                <div class="box-detalhes">
-                    <span></span>
-                    <div class="header">
-                        <h1>O LOBO DE WALL STREET</h1>
-                        <h2>120 minutos - 3 exemplares</h2>
-                        <h3>DVD - BlueRay - 4K</h3>
-                    </div>
-                    <p>ortor placerat in, a enim tempor placerat turpis, a, sed, habitasse augue, et nunc nisi et magna risus odio tincidunt, tortor est, nec, et cum rhoncus amet amet nisi cursus, quis lorem turpis in, enim augue, lectus proin diam facilisis, ut velit dignissim integer dictumst? Cum et phasellus eros sagittis, phasellus elementum augue adipiscing magna habitasse nunc mid scelerisque porta dis porttitor aliquam. Ultricies, cursus odio facilisis a vut integer, arcu, est? Ultricies penatibus sociis, integer! Odio porta </p>
-                </div>
-            </div>
-            <div class="box-lista">
-                <img src="imgs/sem-poster.jpg" alt="Image 1"/>
-                <div class="box-detalhes">
-                    <span></span>
-                    <div class="header">
-                        <h1>O LOBO DE WALL STREET</h1>
-                        <h2>120 minutos - 3 exemplares</h2>
-                        <h3>DVD - BlueRay - 4K</h3>
-                    </div>
-                    <p>ortor placerat in, a enim tempor placerat turpis, a, sed, habitasse augue, et nunc nisi et magna risus odio tincidunt, tortor est, nec, et cum rhoncus amet amet nisi cursus, quis lorem turpis in, enim augue, lectus proin diam facilisis, ut velit dignissim integer dictumst? Cum et phasellus eros sagittis, phasellus elementum augue adipiscing magna habitasse nunc mid scelerisque porta dis porttitor aliquam. Ultricies, cursus odio facilisis a vut integer, arcu, est? Ultricies penatibus sociis, integer! Odio porta </p>
-                </div>
-            </div>
-            <div class="box-lista">
-                <img src="imgs/sem-poster.jpg" alt="Image 1"/>
-                <div class="box-detalhes">
-                    <span></span>
-                    <div class="header">
-                        <h1>O LOBO DE WALL STREET</h1>
-                        <h2>120 minutos - 3 exemplares</h2>
-                        <h3>DVD - BlueRay - 4K</h3>
-                    </div>
-                    <p>ortor placerat in, a enim tempor placerat turpis, a, sed, habitasse augue, et nunc nisi et magna risus odio tincidunt, tortor est, nec, et cum rhoncus amet amet nisi cursus, quis lorem turpis in, enim augue, lectus proin diam facilisis, ut velit dignissim integer dictumst? Cum et phasellus eros sagittis, phasellus elementum augue adipiscing magna habitasse nunc mid scelerisque porta dis porttitor aliquam. Ultricies, cursus odio facilisis a vut integer, arcu, est? Ultricies penatibus sociis, integer! Odio porta </p>
-                </div>
-            </div>
-            <div class="box-lista">
-                <img src="imgs/sem-poster.jpg" alt="Image 1"/>
-                <div class="box-detalhes">
-                    <span></span>
-                    <div class="header">
-                        <h1>O LOBO DE WALL STREET</h1>
-                        <h2>120 minutos - 3 exemplares</h2>
-                        <h3>DVD - BlueRay - 4K</h3>
-                    </div>
-                    <p>ortor placerat in, a enim tempor placerat turpis, a, sed, habitasse augue, et nunc nisi et magna risus odio tincidunt, tortor est, nec, et cum rhoncus amet amet nisi cursus, quis lorem turpis in, enim augue, lectus proin diam facilisis, ut velit dignissim integer dictumst? Cum et phasellus eros sagittis, phasellus elementum augue adipiscing magna habitasse nunc mid scelerisque porta dis porttitor aliquam. Ultricies, cursus odio facilisis a vut integer, arcu, est? Ultricies penatibus sociis, integer! Odio porta </p>
-                </div>
-            </div>
-            <div class="box-lista">
-                <img src="imgs/sem-poster.jpg" alt="Image 1"/>
-                <div class="box-detalhes">
-                    <span></span>
-                    <div class="header">
-                        <h1>O LOBO DE WALL STREET</h1>
-                        <h2>120 minutos - 3 exemplares</h2>
-                        <h3>DVD - BlueRay - 4K</h3>
-                    </div>
-                    <p>ortor placerat in, a enim tempor placerat turpis, a, sed, habitasse augue, et nunc nisi et magna risus odio tincidunt, tortor est, nec, et cum rhoncus amet amet nisi cursus, quis lorem turpis in, enim augue, lectus proin diam facilisis, ut velit dignissim integer dictumst? Cum et phasellus eros sagittis, phasellus elementum augue adipiscing magna habitasse nunc mid scelerisque porta dis porttitor aliquam. Ultricies, cursus odio facilisis a vut integer, arcu, est? Ultricies penatibus sociis, integer! Odio porta </p>
-                </div>
-            </div>
-            <div class="box-lista">
-                <img src="imgs/sem-poster.jpg" alt="Image 1"/>
-                <div class="box-detalhes">
-                    <span></span>
-                    <div class="header">
-                        <h1>O LOBO DE WALL STREET</h1>
-                        <h2>120 minutos - 3 exemplares</h2>
-                        <h3>DVD - BlueRay - 4K</h3>
-                    </div>
-                    <p>ortor placerat in, a enim tempor placerat turpis, a, sed, habitasse augue, et nunc nisi et magna risus odio tincidunt, tortor est, nec, et cum rhoncus amet amet nisi cursus, quis lorem turpis in, enim augue, lectus proin diam facilisis, ut velit dignissim integer dictumst? Cum et phasellus eros sagittis, phasellus elementum augue adipiscing magna habitasse nunc mid scelerisque porta dis porttitor aliquam. Ultricies, cursus odio facilisis a vut integer, arcu, est? Ultricies penatibus sociis, integer! Odio porta </p>
-                </div>
-            </div> 
+            </ui:repeat> 
 
         </ui:define>
 

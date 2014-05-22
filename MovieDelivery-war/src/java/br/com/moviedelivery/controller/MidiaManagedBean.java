@@ -15,12 +15,21 @@ public class MidiaManagedBean {
     
     private Midia midia;
     private Midia midiaSelecionada;
+    private short idCategoriaSelecionada;
     
     @EJB
     private IMidiaService midiaService;
     
     public List<Midia> listar(){
         return midiaService.listar();
+    }
+    
+    public List<Midia> listarDestaque(){
+        return midiaService.listarDestaque();
+    }
+    
+    public List<Midia> listarPorCategoria(){
+        return midiaService.listarPorCategoria(idCategoriaSelecionada);
     }
     
     public MidiaManagedBean(){
@@ -61,7 +70,7 @@ public class MidiaManagedBean {
     public void editar(){
         midia = midiaSelecionada;
     }
-
+    
     public Midia getMidia() {
         return midia;
     }
@@ -77,6 +86,24 @@ public class MidiaManagedBean {
     public void setMidiaSelecionada(Midia midiaSelecionada) {
         this.midiaSelecionada = midiaSelecionada;
     }
+
+    public short getIdCategoriaSelecionada() {
+        return idCategoriaSelecionada;
+    }
+
+    public void setIdCategoriaSelecionada(short idCategoriaSelecionada) {
+        this.idCategoriaSelecionada = idCategoriaSelecionada;
+        System.out.println(">>>>>>>>>"+idCategoriaSelecionada);
+    }
+
+    public IMidiaService getMidiaService() {
+        return midiaService;
+    }
+
+    public void setMidiaService(IMidiaService midiaService) {
+        this.midiaService = midiaService;
+    }
+    
     
     
 }

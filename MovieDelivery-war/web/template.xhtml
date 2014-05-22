@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
 
     <h:head>
         <title>The MovieDelivery</title>
@@ -57,11 +58,15 @@
                     <li>
                         <a href="#" title="">Filmes+</a>
                         <ul class="submenu">
-                            <li><h:link outcome="/categorias.html" value="Terror"></h:link></li>
-                            <li><h:link outcome="/categorias.html" value="Ação"></h:link></li>
-                            <li><h:link outcome="/categorias.html" value="Aventura"></h:link></li>
-                            <li><h:link outcome="/categorias.html" value="Ação"></h:link></li>
-                            <li><h:link outcome="/categorias.html" value="Aventura"></h:link></li>
+                            <h:form id="formMenu">
+                                <ui:repeat value="#{categoriaManagedBean.listar()}" var="categoria" id="menu">
+                                <li><h:commandLink value="#{categoria.descricao}" 
+                                                   action="#{categoriaManagedBean.goToListaPorCategoria()}">
+                                        <f:setPropertyActionListener value="#{categoria.idCategoria}" target="#{midiaManagedBean.idCategoriaSelecionada}"/>
+                                    </h:commandLink>
+                                </li>
+                            </ui:repeat>
+                            </h:form>
                         </ul>
                     </li>
                     <li>
