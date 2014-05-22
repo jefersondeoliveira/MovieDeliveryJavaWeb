@@ -14,7 +14,7 @@ public class Categoria implements Serializable {
     @Column(name = "idCategoria", nullable = false)
     private Integer idCategoria;
     
-    @NotNull(message = "Informe uma descricao")
+    @NotNull(message = "Informe uma descrição")
     @Column(name = "descricao", nullable = false)
     private String descricao;
     

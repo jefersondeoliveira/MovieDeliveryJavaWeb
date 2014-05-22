@@ -29,7 +29,7 @@
 
     <h:body>
         
-        <p:ajaxStatus onstart="loadingDialog.show()"/>
+<!--        <p:ajaxStatus onstart="loadingDialog.show()"/>
         <p:ajaxStatus onsuccess="loadingDialog.hide()"/>
         <p:dialog header="Carregando..." 
                   draggable="false"
@@ -38,7 +38,7 @@
                   widgetVar="loadingDialog">
             <h:graphicImage
                 value="/imagem/ajaxloadingbar.gif"/>
-        </p:dialog>
+        </p:dialog>-->
 
         <div id="header">
             <div id="header-content">
@@ -69,7 +69,7 @@
                         <a href="#" title="">Cadastro+</a>
                         <ul class="submenu">
                             <li><h:link outcome="index" value="Midia"></h:link></li>
-                            <li><h:link outcome="index" value="Tipo Midia"></h:link></li>
+                            <li><h:link outcome="/cadastro/tipomidia/index.html" value="Tipo Midia"></h:link></li>
                             <li><h:link outcome="/cadastro/categoria/index.html" value="Generos"></h:link></li>
                         </ul>
                     </li>

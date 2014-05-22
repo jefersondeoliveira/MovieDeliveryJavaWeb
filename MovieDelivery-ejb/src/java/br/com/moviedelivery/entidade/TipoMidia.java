@@ -1,11 +1,12 @@
 package br.com.moviedelivery.entidade;
 
+import java.io.Serializable;
 import javax.persistence.*;
 import java.util.List;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class TipoMidia {
+public class TipoMidia implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

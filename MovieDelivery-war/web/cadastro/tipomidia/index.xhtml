@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <ui:composition template="../../template.xhtml">
+
+        <ui:define name="conteudo">
+
+            <!-- css -->
+            <link type="text/css" rel="stylesheet" href="../../css/reset.css"/>
+            <link type="text/css" rel="stylesheet" href="../../css/style.css"/>
+            <link type="text/css" rel="stylesheet" href="../../css/jcarousel.css"/>
+            <!-- css -->
+            <!-- plugs -->
+            <script type="text/javascript" src="../../js/plugins/jquery.js"></script>
+            <script type="text/javascript" src="../../js/plugins/jquery.jcarousel.min.js"></script>
+            <script type="text/javascript" src="../../js/func/funcs.js"></script>
+            <!-- plugs -->
+
+            <ui:include src="formulario.xhtml"/>
+            <ui:include src="tabela.xhtml"/>
+
+        </ui:define>
+
+    </ui:composition>
+
+
+</html>
