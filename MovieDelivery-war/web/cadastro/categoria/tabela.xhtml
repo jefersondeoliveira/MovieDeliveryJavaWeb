@@ -11,32 +11,32 @@ and open the template in the editor.
 
     <h:form id="formTabela">
     
-    <p:contextMenu for="tabelaOpcional">
+    <p:contextMenu for="tabelaCategoria">
         <p:menuitem value="Excluir" icon="ui-icon-close"
-                    actionListener="#{opcionalManagedBean.excluir()}"
+                    actionListener="#{categoriaManagedBean.excluir()}"
                     update="painelTabela"></p:menuitem>
          <p:menuitem value="Editar" icon="ui-icon-pencil"
-                    actionListener="#{opcionalManagedBean.editar()}"
-                    update=":formOpcional:painelOpcional"></p:menuitem>
+                     actionListener="#{categoriaManagedBean.editar()}"
+                    update=":formCategoria:painelCategoria"></p:menuitem>
     </p:contextMenu>
     
-    <p:panel header="Opcionais cadastrados" id="painelTabela">
+        <p:panel id="painelTabela" style="margin-top: 10px">
         <p:dataTable paginator="true"
                      rows="10"
-                     id="tabelaOpcional"
-                     emptyMessage="Nenhuma marca cadastrada"
-                     rowKey="#{opcional.idOpcional}"
-                     selection="#{opcionalManagedBean.opcionalSelecionado}"
-                     value="#{opcionalManagedBean.listar()}"
-                     var="opcional"
+                     id="tabelaCategoria"
+                     emptyMessage="Nenhuma categoria cadastrada"
+                     rowKey="#{categoria.idCategoria}"
+                     selection="#{categoriaManagedBean.categoriaSelecionada}"
+                     value="#{categoriaManagedBean.listar()}"
+                     var="categoria"
                      selectionMode="single">
 
             <p:column headerText="Código">
-                #{opcional.idOpcional}
+                #{categoria.idCategoria}
             </p:column>
 
             <p:column headerText="Descrição">
-                #{opcional.descricao}
+                #{categoria.descricao}
             </p:column>
         </p:dataTable>
     </p:panel>
