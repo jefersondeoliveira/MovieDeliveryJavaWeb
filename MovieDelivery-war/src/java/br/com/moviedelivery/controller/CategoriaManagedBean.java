@@ -4,8 +4,8 @@ import br.com.moviedelivery.entidade.Categoria;
 import br.com.moviedelivery.service.ICategoriaService;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 

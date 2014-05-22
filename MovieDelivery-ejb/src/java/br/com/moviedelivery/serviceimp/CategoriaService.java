@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.validation.ConstraintViolationException;
 
 @Stateless
 public class CategoriaService implements ICategoriaService{
@@ -27,9 +28,9 @@ public class CategoriaService implements ICategoriaService{
         try {
             
             em.merge(categoria);
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
+            
+        } catch (ConstraintViolationException ex) {
+            ex.getConstraintViolations();
             return ex.getMessage();
         }
 
