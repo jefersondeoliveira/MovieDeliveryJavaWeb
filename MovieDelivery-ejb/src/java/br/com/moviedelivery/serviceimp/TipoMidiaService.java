@@ -37,7 +37,7 @@ public class TipoMidiaService implements ITipoMidiaService{
     }
 
     @Override
-    public String remover(Integer id) {
+    public String remover(Short id) {
         try {
             
            em.remove(em.find(TipoMidia.class, id));

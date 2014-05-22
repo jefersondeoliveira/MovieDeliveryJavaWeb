@@ -1,6 +1,7 @@
 package br.com.moviedelivery.entidade;
 
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -92,6 +93,51 @@ public class Midia {
 
     public void setTipoMidias(List<TipoMidia> tipoMidias) {
         this.tipoMidias = tipoMidias;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 29 * hash + Objects.hashCode(this.idMidia);
+        hash = 29 * hash + Objects.hashCode(this.duracao);
+        hash = 29 * hash + Objects.hashCode(this.quantidade);
+        hash = 29 * hash + Objects.hashCode(this.sinopse);
+        hash = 29 * hash + Objects.hashCode(this.categoria);
+        hash = 29 * hash + Objects.hashCode(this.tipoMidias);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Midia other = (Midia) obj;
+        if (!Objects.equals(this.idMidia, other.idMidia)) {
+            return false;
+        }
+        if (!Objects.equals(this.tituloMidia, other.tituloMidia)) {
+            return false;
+        }
+        if (!Objects.equals(this.duracao, other.duracao)) {
+            return false;
+        }
+        if (!Objects.equals(this.quantidade, other.quantidade)) {
+            return false;
+        }
+        if (!Objects.equals(this.sinopse, other.sinopse)) {
+            return false;
+        }
+        if (!Objects.equals(this.categoria, other.categoria)) {
+            return false;
+        }
+        if (!Objects.equals(this.tipoMidias, other.tipoMidias)) {
+            return false;
+        }
+        return true;
     }
 
     

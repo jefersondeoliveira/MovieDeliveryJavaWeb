@@ -15,7 +15,7 @@ public class CategoriaConverter implements Converter{
             if(value == null || value.isEmpty()){
                 return null;
             }
-            Integer id = Integer.parseInt(value);
+            Short id = Short.parseShort(value);
             Categoria categoria = new Categoria();
             categoria.setIdCategoria(id);
             return categoria;

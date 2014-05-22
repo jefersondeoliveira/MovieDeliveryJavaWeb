@@ -15,7 +15,7 @@ public class TipoMidiaConverter implements Converter{
             if(value == null || value.isEmpty()){
                 return null;
             }
-            Integer id = Integer.parseInt(value);
+            Short id = Short.parseShort(value);
             TipoMidia tipoMidia = new TipoMidia();
             tipoMidia.setIdTipoMidia(id);
             return tipoMidia;

@@ -9,6 +9,6 @@ public interface ICategoriaService {
     
     public String salvar(Categoria categoria);
     
-    public String remover(Integer id);
+    public String remover(Short id);
     
 }

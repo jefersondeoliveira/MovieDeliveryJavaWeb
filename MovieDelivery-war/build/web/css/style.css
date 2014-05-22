@@ -45,3 +45,11 @@ a{-moz-transition: all 0.2s ease-in-out 0s;-webkit-transition: all 0.2s ease-in-
     position: relative;
     margin: 5px
 }
+#formMidia .labelForm{float: left; width: 150px; padding: 5px; margin-bottom: 10px;}
+#formMidia input{float: left; width: 300px;margin-bottom: 10px;}
+#formMidia td{margin-right: 5px;float: left; margin-top: 10px}
+#formMidia td label{margin-top: -2px}
+#formMidia textArea{width: 400px; height: 150px; max-width: 400px; min-width: 400px; min-height: 150px; max-height: 150px;}
+#formBoxLeft{float: left; width: 500px}
+#formBoxRight{float: left; }
+

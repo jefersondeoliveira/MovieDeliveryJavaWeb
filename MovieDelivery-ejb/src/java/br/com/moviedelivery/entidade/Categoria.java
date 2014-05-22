@@ -12,7 +12,7 @@ public class Categoria implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idCategoria", nullable = false)
-    private Integer idCategoria;
+    private Short idCategoria;
     
     @NotNull(message = "Informe uma descrição")
     @Column(name = "descricao", nullable = false)
@@ -21,7 +21,7 @@ public class Categoria implements Serializable {
     @OneToMany(mappedBy = "categoria", fetch = FetchType.LAZY)
     private List<Midia> midias;
 
-    public Integer getIdCategoria() {
+    public Short getIdCategoria() {
         return idCategoria;
     }
 
@@ -29,7 +29,7 @@ public class Categoria implements Serializable {
         return descricao;
     }
 
-    public void setIdCategoria(Integer idCategoria) {
+    public void setIdCategoria(Short idCategoria) {
         this.idCategoria = idCategoria;
     }
 
@@ -48,6 +48,7 @@ public class Categoria implements Serializable {
     @Override
     public int hashCode() {
         int hash = 3;
+        hash = 83 * hash + Objects.hashCode(this.idCategoria);
         return hash;
     }
 
@@ -63,15 +64,8 @@ public class Categoria implements Serializable {
         if (!Objects.equals(this.idCategoria, other.idCategoria)) {
             return false;
         }
-        if (!Objects.equals(this.descricao, other.descricao)) {
-            return false;
-        }
-        if (!Objects.equals(this.midias, other.midias)) {
-            return false;
-        }
         return true;
     }
-    
-    
+
     
 }

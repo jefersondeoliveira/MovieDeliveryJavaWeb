@@ -9,6 +9,6 @@ public interface ITipoMidiaService {
     
     public String salvar(TipoMidia tipoMidia);
     
-    public String remover(Integer id);
+    public String remover(Short id);
     
 }

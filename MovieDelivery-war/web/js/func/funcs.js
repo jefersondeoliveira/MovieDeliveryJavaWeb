@@ -5,7 +5,7 @@ $(function(){
     });
 */
 
-    $('.box, .box-lista').hover(function(){
+        $('.box, .box-lista').hover(function(){
 			$(this).find('.box-detalhes').stop(false,true).show()
 		}, function(){
 			$(this).find('.box-detalhes').stop(false,true).hide()

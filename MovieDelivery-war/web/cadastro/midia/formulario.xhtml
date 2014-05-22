@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:p="http://primefaces.org/ui"
+             xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:form id="formMidia">
+        <p:panel header="Cadastro de Midias" id="painelMidia">
+            <p:growl/>
+            <h:inputHidden
+                value="#{midiaManagedBean.midia.idMidia}"/>
+            <div id="formBoxLeft">
+                <div class="labelForm">Titulo:</div>
+                <p:inputText
+                    value="#{midiaManagedBean.midia.tituloMidia}"/>
+                <div class="labelForm">Duração(mim):</div>
+                <p:inputText
+                    value="#{midiaManagedBean.midia.duracao}"/>
+                <div class="labelForm">Qtd Exemplares:</div>
+                <p:inputText
+                    value="#{midiaManagedBean.midia.quantidade}"/>
+                <div class="labelForm">Genero:</div>
+                <p:selectOneMenu
+                    value="#{midiaManagedBean.midia.categoria}"
+                    converter="categoriaConverter">
+                    <f:selectItem 
+                        itemLabel="Selecione um Genero"
+                        itemValue=""/>
+                    <f:selectItems 
+                        value="#{categoriaManagedBean.listar()}"
+                        var="categoria"
+                        itemLabel="#{categoria.descricao}"
+                        itemValue="#{categoria}"/>
+                </p:selectOneMenu>
+                <p:selectManyCheckbox 
+                    value="#{midiaManagedBean.midia.tipoMidias}"
+                    converter="tipoMidiaConverter">
+                    <f:selectItems
+                        value="#{tipoMidiaManagedBean.listar()}"
+                        var="tipoMidia"
+                        itemLabel="#{tipoMidia.descricao}"
+                        itemValue="#{tipoMidia}"/>
+                </p:selectManyCheckbox>
+            </div><!-- fecha #formBoxLeft -->    
+            <div id="formBoxRight">
+            <p:inputTextarea
+                value="#{midiaManagedBean.midia.sinopse}" />
+            </div><!-- fecha #formBoxRight -->    
+
+            <p:commandButton 
+                value="Salvar" 
+                icon="ui-icon-disk" 
+                actionListener="#{midiaManagedBean.salvar()}"
+                update="painelMidia"
+                style="float: right"/>
+            
+            <div class="clean"></div>
+        </p:panel>
+    </h:form>
+
+</ui:fragment>

@@ -38,7 +38,7 @@ public class CategoriaService implements ICategoriaService{
     }
 
     @Override
-    public String remover(Integer id) {
+    public String remover(Short id) {
         try {
             
            em.remove(em.find(Categoria.class, id));
