@@ -1,6 +1,7 @@
 package br.com.moviedelivery.controller;
 
 import br.com.moviedelivery.entidade.Categoria;
+import br.com.moviedelivery.model.GraficoCategoria;
 import br.com.moviedelivery.service.ICategoriaService;
 import java.util.List;
 import javax.ejb.EJB;
@@ -8,6 +9,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import org.primefaces.model.chart.PieChartModel;
 
 @Named("categoriaManagedBean")
 @RequestScoped
@@ -60,6 +62,15 @@ public class CategoriaManagedBean {
                     erro, null);
             FacesContext.getCurrentInstance().addMessage(null, fm);
         }
+    }
+    
+    public PieChartModel gerarGrafico(){
+        PieChartModel model = new PieChartModel();
+        List<GraficoCategoria> graficoModels = categoriaService.gerarGrafico();
+        for (GraficoCategoria graficoModel : graficoModels) {
+            model.set(graficoModel.getCategoria(), graficoModel.getQuantidade());
+        }
+        return model;
     }
     
     public void editar(){

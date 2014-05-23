@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    
+    <ui:composition template="../../template.xhtml">
+        
+        <ui:define name="conteudo">
+            
+            <!-- css -->
+            <link type="text/css" rel="stylesheet" href="../../css/reset.css"/>
+            <link type="text/css" rel="stylesheet" href="../../css/style.css"/>
+            <!-- css -->
+            <!-- plugs -->
+            <script type="text/javascript" src="../../js/func/funcs.js"></script>
+            <!-- plugs -->
+             
+            <p:pieChart 
+                value="#{categoriaManagedBean.gerarGrafico()}"
+                showDataLabels="true"
+                legendPosition="e"/>
+            
+        </ui:define>
+        
+    </ui:composition>
+    
+</html>

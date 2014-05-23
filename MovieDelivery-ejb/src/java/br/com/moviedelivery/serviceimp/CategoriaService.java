@@ -1,6 +1,7 @@
 package br.com.moviedelivery.serviceimp;
 
 import br.com.moviedelivery.entidade.Categoria;
+import br.com.moviedelivery.model.GraficoCategoria;
 import br.com.moviedelivery.service.ICategoriaService;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -49,6 +50,16 @@ public class CategoriaService implements ICategoriaService{
         }
 
         return null;
+    }
+
+    @Override
+    public List<GraficoCategoria> gerarGrafico() {
+        TypedQuery<GraficoCategoria> query 
+               = em.createQuery("select new br.com.moviedelivery.model.GraficoCategoria"
+                + "( c.descricao, SIZE(c.midias)) from Categoria as c ", 
+                GraficoCategoria.class);
+        
+        return query.getResultList();
     }
     
 }

@@ -1,6 +1,7 @@
 package br.com.moviedelivery.serviceimp;
 
 import br.com.moviedelivery.entidade.TipoMidia;
+import br.com.moviedelivery.model.GraficoTipoDeMidia;
 import br.com.moviedelivery.service.ITipoMidiaService;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -48,6 +49,16 @@ public class TipoMidiaService implements ITipoMidiaService{
         }
 
         return null;
+    }
+
+    @Override
+    public List<GraficoTipoDeMidia> gerarGrafico() {
+        TypedQuery<GraficoTipoDeMidia> query 
+                = em.createQuery("select new br.com.moviedelivery.model.GraficoTipoDeMidia"
+                + "(m.categoria.descricao ,m.descricao, SIZE(m.midias)) from TipoMidia as m ", 
+                GraficoTipoDeMidia.class);
+        
+        return query.getResultList();
     }
     
 }
