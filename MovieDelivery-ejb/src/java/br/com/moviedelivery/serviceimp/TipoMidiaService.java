@@ -17,7 +17,7 @@ public class TipoMidiaService implements ITipoMidiaService{
     @Override
     public List<TipoMidia> listar() {
         TypedQuery<TipoMidia> query =
-                em.createQuery("select a from TipoMidia as a",
+                em.createQuery("select t from TipoMidia as t",
                 TipoMidia.class);
         return query.getResultList();
     }

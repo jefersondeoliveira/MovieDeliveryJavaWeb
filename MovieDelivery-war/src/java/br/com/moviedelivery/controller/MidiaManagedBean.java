@@ -93,7 +93,6 @@ public class MidiaManagedBean {
 
     public void setIdCategoriaSelecionada(short idCategoriaSelecionada) {
         this.idCategoriaSelecionada = idCategoriaSelecionada;
-        System.out.println(">>>>>>>>>"+idCategoriaSelecionada);
     }
 
     public IMidiaService getMidiaService() {

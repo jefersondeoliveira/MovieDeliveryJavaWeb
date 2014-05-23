@@ -18,7 +18,7 @@ public class CategoriaService implements ICategoriaService{
     @Override
     public List<Categoria> listar() {
         TypedQuery<Categoria> query =
-                em.createQuery("select a from Categoria as a",
+                em.createQuery("select c from Categoria as c",
                 Categoria.class);
         return query.getResultList();
     }

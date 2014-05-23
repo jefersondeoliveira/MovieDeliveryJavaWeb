@@ -21,9 +21,9 @@ public class Midia {
     @Column(name = "duracao", nullable = false)
     private Integer duracao;
     
-    @NotNull(message = "Informe a quantidade de exemplares")
-    @Column(name = "quantidade", nullable = false)
-    private Integer quantidade;
+    @NotNull(message = "Informe a ano")
+    @Column(name = "ano", nullable = false)
+    private Integer ano;
     
     @NotNull(message = "Informe a sinopse")
     @Column(name = "sinopse", nullable = false)
@@ -63,14 +63,6 @@ public class Midia {
         this.duracao = duracao;
     }
 
-    public Integer getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(Integer quantidade) {
-        this.quantidade = quantidade;
-    }
-
     public String getSinopse() {
         return sinopse;
     }
@@ -95,51 +87,14 @@ public class Midia {
         this.tipoMidias = tipoMidias;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 29 * hash + Objects.hashCode(this.idMidia);
-        hash = 29 * hash + Objects.hashCode(this.duracao);
-        hash = 29 * hash + Objects.hashCode(this.quantidade);
-        hash = 29 * hash + Objects.hashCode(this.sinopse);
-        hash = 29 * hash + Objects.hashCode(this.categoria);
-        hash = 29 * hash + Objects.hashCode(this.tipoMidias);
-        return hash;
+    public Integer getAno() {
+        return ano;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Midia other = (Midia) obj;
-        if (!Objects.equals(this.idMidia, other.idMidia)) {
-            return false;
-        }
-        if (!Objects.equals(this.tituloMidia, other.tituloMidia)) {
-            return false;
-        }
-        if (!Objects.equals(this.duracao, other.duracao)) {
-            return false;
-        }
-        if (!Objects.equals(this.quantidade, other.quantidade)) {
-            return false;
-        }
-        if (!Objects.equals(this.sinopse, other.sinopse)) {
-            return false;
-        }
-        if (!Objects.equals(this.categoria, other.categoria)) {
-            return false;
-        }
-        if (!Objects.equals(this.tipoMidias, other.tipoMidias)) {
-            return false;
-        }
-        return true;
+    public void setAno(Integer ano) {
+        this.ano = ano;
     }
+    
+    
 
-    
-    
 }

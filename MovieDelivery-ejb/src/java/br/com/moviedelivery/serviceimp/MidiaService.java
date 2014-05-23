@@ -17,7 +17,7 @@ public class MidiaService implements IMidiaService{
     @Override
     public List<Midia> listar() {
         TypedQuery<Midia> query =
-                em.createQuery("select a from Midia as a",
+                em.createQuery("select a from Midia as a order by a.tituloMidia",
                 Midia.class);
         return query.getResultList();
     }
