@@ -3,6 +3,7 @@ package br.com.moviedelivery.controller;
 import br.com.moviedelivery.entidade.TipoMidia;
 import br.com.moviedelivery.model.GraficoTipoDeMidia;
 import br.com.moviedelivery.service.ITipoMidiaService;
+import br.com.moviedelivery.util.RelatorioFactory;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
@@ -74,6 +75,10 @@ public class TipoMidiaManagedBean {
         }
         
         return model;
+    }
+    
+    public void imprimir(){
+        RelatorioFactory.Relatorios("/WEB-INFO/relatorios/reportTipoMidia.jasper");
     }
     
     public void editar(){

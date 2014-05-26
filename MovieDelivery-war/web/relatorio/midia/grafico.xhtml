@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    
+    <ui:composition template="../../template.xhtml">
+        
+        <ui:define name="conteudo">
+             
+            <p:barChart 
+                value="#{midiaManagedBean.gerarGrafico()}" 
+                legendPosition="ne"
+                title="Midias"
+                min="0" 
+                max="20" 
+                style="height:300px"/>
+            
+        </ui:define>
+        
+    </ui:composition>
+    
+</html>

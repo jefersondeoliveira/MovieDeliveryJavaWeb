@@ -1,13 +1,17 @@
 package br.com.moviedelivery.controller;
 
 import br.com.moviedelivery.entidade.Midia;
+import br.com.moviedelivery.model.GraficoMidia;
 import br.com.moviedelivery.service.IMidiaService;
+import br.com.moviedelivery.util.RelatorioFactory;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import org.primefaces.model.chart.CartesianChartModel;
+import org.primefaces.model.chart.ChartSeries;
 
 @Named("midiaManagedBean")
 @RequestScoped
@@ -65,6 +69,25 @@ public class MidiaManagedBean {
                     erro, null);
             FacesContext.getCurrentInstance().addMessage(null, fm);
         }
+    }
+    
+    public CartesianChartModel  gerarGrafico(){
+        CartesianChartModel model = new CartesianChartModel();
+        
+        List<GraficoMidia> graficoModels = midiaService.gerarGrafico();
+        
+        for (GraficoMidia graficoModel : graficoModels) {
+            ChartSeries cor = new ChartSeries(); 
+            cor.setLabel(graficoModel.getCategoria());
+            cor.set(graficoModel.getCategoria(), graficoModel.getDuracao());
+            model.addSeries(cor);
+        }
+        
+        return model;
+    }
+    
+    public void imprimir(){
+        RelatorioFactory.Relatorios("/WEB-INF/relatorios/reportMidia.jasper");
     }
     
     public void editar(){

@@ -1,6 +1,7 @@
 package br.com.moviedelivery.serviceimp;
 
 import br.com.moviedelivery.entidade.Midia;
+import br.com.moviedelivery.model.GraficoMidia;
 import br.com.moviedelivery.service.IMidiaService;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -63,6 +64,16 @@ public class MidiaService implements IMidiaService{
          TypedQuery<Midia> query =
                 em.createQuery("select a from Midia as a Where a.categoria.idCategoria = "+id,
                 Midia.class);
+        return query.getResultList();
+    }
+
+    @Override
+    public List<GraficoMidia> gerarGrafico() {
+        TypedQuery<GraficoMidia> query 
+                = em.createQuery("select new br.com.moviedelivery.model.GraficoMidia"
+                + "( m.ano, m.categoria.descricao, m.duracao) from Midia as m", 
+                GraficoMidia.class);
+        
         return query.getResultList();
     }
     

@@ -3,6 +3,7 @@ package br.com.moviedelivery.controller;
 import br.com.moviedelivery.entidade.Categoria;
 import br.com.moviedelivery.model.GraficoCategoria;
 import br.com.moviedelivery.service.ICategoriaService;
+import br.com.moviedelivery.util.RelatorioFactory;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
@@ -71,6 +72,10 @@ public class CategoriaManagedBean {
             model.set(graficoModel.getCategoria(), graficoModel.getQuantidade());
         }
         return model;
+    }
+    
+    public void imprimir(){
+        RelatorioFactory.Relatorios("/WEB-INFO/relatorios/reportCategoria.jasper");
     }
     
     public void editar(){
