@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui"
+             xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:form id="formTabela">
+    
+    <p:contextMenu for="tabelaCategoria">
+        <p:menuitem value="Excluir" icon="ui-icon-close"
+                    actionListener="#{categoriaManagedBean.excluir()}"
+                    update="painelTabela"></p:menuitem>
+         <p:menuitem value="Editar" icon="ui-icon-pencil"
+                     actionListener="#{categoriaManagedBean.editar()}"
+                    update=":formCategoria:painelCategoria"></p:menuitem>
+    </p:contextMenu>
+    
+        <p:panel id="painelTabela" style="margin-top: 10px">
+        <p:dataTable paginator="true"
+                     rows="10"
+                     id="tabelaCategoria"
+                     emptyMessage="Nenhuma categoria cadastrada"
+                     rowKey="#{categoria.idCategoria}"
+                     selection="#{categoriaManagedBean.categoriaSelecionada}"
+                     value="#{categoriaManagedBean.listar()}"
+                     var="categoria"
+                     selectionMode="single">
+
+            <p:column headerText="Código">
+                #{categoria.idCategoria}
+            </p:column>
+
+            <p:column headerText="Descrição">
+                #{categoria.descricao}
+            </p:column>
+        </p:dataTable>
+    </p:panel>
+        
+        </h:form>
+
+
+</ui:fragment>

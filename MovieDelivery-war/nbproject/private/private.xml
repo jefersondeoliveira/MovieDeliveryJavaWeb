@@ -2,15 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Jeferson/Documents/NetBeansProjects/5pSistemas/MovieDelivery/MovieDelivery-war/web/template.xhtml</file>
-            <file>file:/C:/Users/Jeferson/Documents/NetBeansProjects/5pSistemas/MovieDelivery/MovieDelivery-war/web/index.xhtml</file>
-            <file>file:/C:/Users/Jeferson/Documents/NetBeansProjects/5pSistemas/MovieDelivery/MovieDelivery-war/src/java/br/com/moviedelivery/controller/TipoMidiaManagedBean.java</file>
-            <file>file:/C:/Users/Jeferson/Documents/NetBeansProjects/5pSistemas/MovieDelivery/MovieDelivery-war/src/java/br/com/moviedelivery/controller/MidiaManagedBean.java</file>
-            <file>file:/C:/Users/Jeferson/Documents/NetBeansProjects/5pSistemas/MovieDelivery/MovieDelivery-war/src/java/br/com/moviedelivery/controller/CategoriaManagedBean.java</file>
-            <file>file:/C:/Users/Jeferson/Documents/NetBeansProjects/5pSistemas/MovieDelivery/MovieDelivery-war/web/cadastro/midia/tabela.xhtml</file>
-            <file>file:/C:/Users/Jeferson/Documents/NetBeansProjects/5pSistemas/MovieDelivery/MovieDelivery-war/web/relatorio/midia/grafico.xhtml</file>
-            <file>file:/C:/Users/Jeferson/Documents/NetBeansProjects/5pSistemas/MovieDelivery/MovieDelivery-war/src/java/br/com/moviedelivery/util/RelatorioFactory.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

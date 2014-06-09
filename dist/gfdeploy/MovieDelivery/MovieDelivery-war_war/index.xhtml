@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <ui:composition template="template.xhtml">
+
+        <ui:define name="conteudo">
+
+            <div class="jcarousel-wrapper">
+                <div class="jcarousel">
+                    <ul>
+                        <ui:repeat value="#{midiaManagedBean.listarDestaque()}" var="midia">
+                            <li>
+                                <div class="box">
+                                    <img src="imgs/sem-poster.jpg" alt="Image 1"/>
+                                    <div class="box-detalhes">
+                                        <span></span>
+                                        <div class="header">
+                                            <h1>#{midia.tituloMidia}</h1>
+                                            <h2>#{midia.duracao} minutos - #{midia.ano}</h2>
+                                            <h2>#{midia.categoria.descricao}</h2>
+                                            <h3>
+                                                 <ui:repeat value="#{midia.tipoMidias}" var="listTp">
+                                                    #{listTp.descricao}
+                                                </ui:repeat>
+                                            </h3>
+                                        </div>
+                                        <p>#{midia.sinopse}</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ui:repeat>
+
+                    </ul>
+                </div>
+
+                <a href="#" class="jcarousel-control-prev"></a>
+                <a href="#" class="jcarousel-control-next"></a>
+
+                <p class="jcarousel-pagination"></p>
+            </div>            
+
+        </ui:define>
+
+    </ui:composition>
+
+
+</html>

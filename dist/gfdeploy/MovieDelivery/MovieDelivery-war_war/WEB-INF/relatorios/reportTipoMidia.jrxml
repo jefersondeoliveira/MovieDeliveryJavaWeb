@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportTipoMidia" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c9875cda-37fe-49b5-87a7-a2520b100293">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from tipomidia]]>
+	</queryString>
+	<field name="idTipoMidia" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descricao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement uuid="ec57f034-b1b3-4409-a64b-438bb9e4cab8" x="0" y="0" width="555" height="79"/>
+				<imageExpression><![CDATA["D:\\relatorio delivey\\logo-header.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement uuid="3fce4d10-7d37-424b-bc8f-65cd4115f87d" x="0" y="13" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.75"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="684e518f-ab4f-4859-b967-29e433394177" x="0" y="1" width="555" height="15" forecolor="#CCCCCC" backcolor="#CCCCCC"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="6bbc6f62-3426-408a-8199-1de0f4f26a92" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8548a48e-0d5e-4aad-ba7e-38b5324ce312" x="100" y="0" width="455" height="20"/>
+				<textElement/>
+				<text><![CDATA[Tipo de Mídia]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement uuid="b002f1b0-2208-45b6-979d-6dceef188112" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{idTipoMidia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ef6da55d-10f1-4e62-a7b7-2e854954a63a" x="100" y="0" width="455" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

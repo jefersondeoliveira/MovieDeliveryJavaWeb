@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:p="http://primefaces.org/ui">
+    
+    <h:form id="formTipoMidia">
+        <p:panel header="Cadastro de Tipos de Midias" id="painelTipoMidia">
+            <p:growl/>
+            <h:inputHidden
+                value="#{tipoMidiaManagedBean.tipoMidia.idTipoMidia}"/>
+            Descrição:
+            <p:inputText
+                value="#{tipoMidiaManagedBean.tipoMidia.descricao}"/>
+            <p:commandButton 
+                value="Salvar" 
+                icon="ui-icon-disk" 
+                actionListener="#{tipoMidiaManagedBean.salvar()}"
+                update="painelTipoMidia, :formTabela:painelTabela"/>
+        </p:panel>
+    </h:form>
+
+</ui:fragment>

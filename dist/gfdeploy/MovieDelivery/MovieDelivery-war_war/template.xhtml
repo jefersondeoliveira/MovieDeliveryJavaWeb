@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+        <title>The MovieDelivery</title>
+        <meta name="description" content="A sua locadora online" />
+        <meta name="keywords" content="movie, delivery, films, location" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="language" content="pt-br" />
+        <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon"/>
+        <!-- css -->
+        <link type="text/css" rel="stylesheet" href="css/reset.css"/>
+        <link type="text/css" rel="stylesheet" href="css/style.css"/>
+        <link type="text/css" rel="stylesheet" href="css/jcarousel.css"/>
+        <!-- css -->
+        <!-- plugs -->
+        <script type="text/javascript" src="js/plugins/jquery.js"></script>
+        <script type="text/javascript" src="js/plugins/jquery.jcarousel.min.js"></script>
+        <script type="text/javascript" src="js/plugins/jcarousel.responsive.js"></script>
+        <script type="text/javascript" src="js/func/funcs.js"></script>
+        <script type="text/javascript">
+//            $(function(){
+//                $('.jcarousel').jcarouselAutoscroll({
+//                    autostart: true
+//                 });
+//            });
+        </script>
+        <!-- plugs -->
+
+    </h:head>
+
+    <h:body>
+        
+<!--        <p:ajaxStatus onstart="loadingDialog.show()"/>
+        <p:ajaxStatus onsuccess="loadingDialog.hide()"/>
+        <p:dialog header="Carregando..." 
+                  draggable="false"
+                  closable="false"
+                  modal="true"
+                  widgetVar="loadingDialog">
+            <h:graphicImage
+                value="/imagem/ajaxloadingbar.gif"/>
+        </p:dialog>-->
+
+        <div id="header">
+            <div id="header-content">
+                <div id="logo">
+                    <h:link outcome="/index.html" value=""></h:link>
+                </div>
+                <!--                <div id="login">
+                                    <a href="#" title="Cadastrar">Cadastrar</a>
+                                    <a href="#" title="Logar">Logar</a>
+                                </div>-->
+            </div>
+        </div>
+        <div id="menu">
+            <div id="menu-content">
+                <ul>
+                    <li><h:link outcome="/index.html" value="Inicio"></h:link></li>
+                    <li>
+                        <a href="#" title="">Filmes+</a>
+                        <ul class="submenu">
+                            <h:form id="formMenu">
+                                <ui:repeat value="#{categoriaManagedBean.listar()}" var="categoria" id="menu">
+                                <li><h:commandLink value="#{categoria.descricao}" 
+                                                   action="#{categoriaManagedBean.goToListaPorCategoria()}">
+                                        <f:setPropertyActionListener value="#{categoria.idCategoria}" target="#{midiaManagedBean.idCategoriaSelecionada}"/>
+                                    </h:commandLink>
+                                </li>
+                            </ui:repeat>
+                            </h:form>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" title="">Cadastro+</a>
+                        <ul class="submenu">
+                            <li><h:link outcome="/cadastro/midia/index.html" value="Midia"></h:link></li>
+                            <li><h:link outcome="/cadastro/tipomidia/index.html" value="Tipo Midia"></h:link></li>
+                            <li><h:link outcome="/cadastro/categoria/index.html" value="Generos"></h:link></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" title="">Relatorio+</a>
+                        <ul class="submenu">
+                            <!--<li><h:link outcome="/relatorio/midia/grafico.html" value="Midia"></h:link></li>-->
+                            <!--<li><h:link outcome="/relatorio/tipomidia/grafico.html" value="Tipo Midia"></h:link></li>-->
+                            <li><h:link outcome="/relatorio/categoria/grafico.html" value="Generos"></h:link></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <div id="content-content">
+
+                <ui:insert name="conteudo"></ui:insert>
+
+                <div class="clean"></div>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="footer-content">
+                <p>2014 - The MovieDelivery.com.br</p>
+            </div>
+        </div>
+
+    </h:body>
+
+</html>
+

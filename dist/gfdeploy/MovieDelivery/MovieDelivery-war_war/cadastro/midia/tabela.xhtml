@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:p="http://primefaces.org/ui"
+             xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:form id="formTabela">
+
+        <p:contextMenu for="tabelaMidia">
+            <p:menuitem value="Excluir" icon="ui-icon-close"
+                        actionListener="#{midiaManagedBean.excluir()}"
+                        update="painelTabela"></p:menuitem>
+            <p:menuitem value="Editar" icon="ui-icon-pencil"
+                        actionListener="#{midiaManagedBean.editar()}"
+                        update=":formMidia:painelMidia"></p:menuitem>
+        </p:contextMenu>
+
+        <p:panel id="painelTabela" style="margin-top: 10px;">
+            <p:dataTable paginator="true"
+                         rows="10"
+                         id="tabelaMidia"
+                         emptyMessage="Nenhuma midia cadastrada"
+                         rowKey="#{midia.idMidia}"
+                         selection="#{midiaManagedBean.midiaSelecionada}"
+                         value="#{midiaManagedBean.listar()}"
+                         var="midia"
+                         selectionMode="single">
+
+                <p:column headerText="Titulo">
+                    #{midia.tituloMidia}
+                </p:column>
+
+                <p:column headerText="(mim)">
+                    #{midia.duracao}
+                </p:column>
+
+                <p:column headerText="Ano">
+                    #{midia.ano}
+                </p:column>
+
+                <p:column headerText="Genero">
+                    #{midia.categoria.descricao}
+                </p:column>
+
+                <p:column >
+                    <ui:repeat value="#{midia.tipoMidias}" var="listTp">
+                        #{listTp.descricao}
+                    </ui:repeat>
+                </p:column>
+
+            </p:dataTable>
+        </p:panel>
+        
+    </h:form>
+    
+    <h:form>
+        <p:column>
+            <p:commandButton 
+                value="Imprimir" 
+                icon="ui-icon-disk"
+                ajax="false"
+                process="@this"
+                action="#{midiaManagedBean.imprimir()}"
+                style="float: right; margin-top: 15px"/>
+        </p:column>
+    </h:form>
+
+
+</ui:fragment>
